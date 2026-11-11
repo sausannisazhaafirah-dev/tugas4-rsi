@@ -1,5 +1,6 @@
 import { http } from './http';
 import type {
+  MenuItem,
   ApiList,
   ApiSuccess,
   LoginInput,
@@ -35,6 +36,9 @@ export const stallsApi = {
   // Path parameter: id warung.
   get: (id: number) => http.get<ApiSuccess<Stall>>(`/stalls/${id}`).then((res) => res.data.data),
 
+    // Menu sebuah warung (endpoint sudah ada di backend, hanya dibaca).
+  menus: (id: number) => http.get<ApiSuccess<MenuItem[]>>(`/stalls/${id}/menus`).then((res) => res.data.data),
+  
   create: (input: StallInput) =>
     http.post<ApiSuccess<Stall>>('/stalls', input).then((res) => res.data.data),
 

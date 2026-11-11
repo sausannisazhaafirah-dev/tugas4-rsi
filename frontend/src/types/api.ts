@@ -21,6 +21,14 @@ export interface Stall {
   isPopular: boolean;
 }
 
+export interface MenuItem {
+  id: number;
+  stallId: number;
+  name: string;
+  price: number;
+  isAvailable: boolean;
+}
+
 // Respons sukses: { status: 'success', data }
 export interface ApiSuccess<T> {
   status: 'success';

@@ -5,6 +5,7 @@ import AccountPage from './pages/AccountPage';
 import LoginPage from './pages/LoginPage';
 import NotFoundPage from './pages/NotFoundPage';
 import RegisterPage from './pages/RegisterPage';
+import StallDetailPage from './pages/StallDetailPage';
 import StallsPage from './pages/StallsPage';
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
       {/* Halaman dengan navbar */}
       <Route element={<AppLayout />}>
         <Route index element={<StallsPage />} />
+        <Route path="warung/:id" element={<StallDetailPage />} />
         <Route
           path="akun"
           element={

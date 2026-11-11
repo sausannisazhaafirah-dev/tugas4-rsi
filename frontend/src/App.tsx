@@ -1,13 +1,32 @@
+import { Route, Routes } from 'react-router-dom';
+import { AppLayout } from './components/AppLayout';
+import { ProtectedRoute } from './components/ProtectedRoute';
+import AccountPage from './pages/AccountPage';
+import LoginPage from './pages/LoginPage';
+import NotFoundPage from './pages/NotFoundPage';
+import RegisterPage from './pages/RegisterPage';
+import StallsPage from './pages/StallsPage';
+
 export default function App() {
   return (
-    <main className="grid min-h-screen place-items-center">
-      <div className="rounded-xl border border-line bg-white p-6 text-center">
-        <h1 className="text-2xl font-semibold text-brand-dark">Lapak Kantin</h1>
-        <p className="mt-1 text-muted">Tailwind dan warna toska sudah aktif.</p>
-        <button className="mt-4 rounded-lg bg-brand px-4 py-2 text-white hover:bg-brand-hover">
-          Tes tombol
-        </button>
-      </div>
-    </main>
+    <Routes>
+      {/* Halaman tanpa navbar */}
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<RegisterPage />} />
+
+      {/* Halaman dengan navbar */}
+      <Route element={<AppLayout />}>
+        <Route index element={<StallsPage />} />
+        <Route
+          path="akun"
+          element={
+            <ProtectedRoute>
+              <AccountPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route path="*" element={<NotFoundPage />} />
+      </Route>
+    </Routes>
   );
 }

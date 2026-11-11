@@ -40,7 +40,7 @@ export default function RegisterPage() {
       heading="Buat akun baru"
       description="Akun yang mendaftar sendiri otomatis menjadi pelanggan. Akun pemilik warung dan admin dibuat oleh pengelola kantin."
     >
-      <h1 className="text-2xl font-semibold text-brand-dark">Daftar</h1>
+        <h1 className="font-display text-3xl text-brand-dark">Daftar</h1>
       <p className="mt-1 mb-6 text-sm text-muted">
         Sudah punya akun?{' '}
         <Link to="/login" className="font-medium text-brand hover:underline">

@@ -1,21 +1,40 @@
 @import "tailwindcss";
 
-/* Palet KantinKu (toska laut) — cukup ganti di sini kalau mau ubah warna */
+/* Palet Lapak Kantin: toska + mint, dengan aksen pink stroberi dan peach. */
 @theme {
-  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
-  --color-brand: #0E6E7A;
+  --font-sans: "Plus Jakarta Sans Variable", ui-sans-serif, system-ui, sans-serif;
+  --color-brand: #0E6E7A;       /* toska: tombol utama, link */
   --color-brand-hover: #0A5963;
-  --color-brand-dark: #0A4F57;
-  --color-brand-soft: #E2F4F5;
-  --color-page: #F6FAFA;
-  --color-line: #D5E2E3;
-  --color-ink: #1F2A2C;
-  --color-muted: #5B6B6E;
-  --color-star: #D85A30;
+  --color-brand-dark: #0B4A52;  /* judul */
+  --color-brand-soft: #E3F4F1;  /* mint muda */
+  --color-mint: #BFE6DD;        /* mint */
+  --color-page: #F7FBFA;        /* latar */
+  --color-line: #DCEAE7;        /* garis */
+  --color-ink: #1E2B2D;         /* teks utama */
+  --color-muted: #5E7072;       /* teks pendukung */
+  --color-rose: #E46A86;        /* pink stroberi: rating, populer */
+  --color-rose-soft: #FDE8EE;
+  --color-peach: #FFE6D5;       /* peach: sorotan lembut */
+  --color-peach-ink: #9A4A1E;
 }
 
 body {
   background: var(--color-page);
   color: var(--color-ink);
   font-family: var(--font-sans);
+}
+
+/* Judul: tebal dan sedikit rapat. */
+.font-display {
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
 }

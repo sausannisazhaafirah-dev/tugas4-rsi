@@ -48,7 +48,7 @@ export default function LoginPage() {
       heading="Kelola warung kantin dari satu tempat"
       description="Pemilik warung bisa menambah dan mengubah warungnya. Pengunjung bisa melihat daftar warung tanpa perlu masuk."
     >
-      <h1 className="text-2xl font-semibold text-brand-dark">Masuk</h1>
+        <h1 className="font-display text-3xl text-brand-dark">Masuk</h1>
       <p className="mt-1 mb-6 text-sm text-muted">
         Belum punya akun?{' '}
         <Link to="/register" className="font-medium text-brand hover:underline">

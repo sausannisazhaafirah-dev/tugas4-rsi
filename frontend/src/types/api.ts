@@ -72,6 +72,7 @@ export interface StallInput {
 export interface StallQuery {
   search?: string;
   category?: string;
+  location?: string;
   page?: number;
   limit?: number;
 }

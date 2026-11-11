@@ -13,6 +13,7 @@ export const idParamSchema = z.object({
 export const stallQuerySchema = z.object({
   search: z.string().trim().max(100, 'search maksimal 100 karakter').optional(),
   category: z.string().trim().max(50, 'category maksimal 50 karakter').optional(),
+  location: z.string().trim().max(100, 'location maksimal 100 karakter').optional(),
   page: z.coerce
     .number({ invalid_type_error: 'page harus berupa angka' })
     .int('page harus bilangan bulat')

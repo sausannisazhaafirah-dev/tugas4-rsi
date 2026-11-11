@@ -22,6 +22,7 @@ stallRouter.get('/', validate(stallQuerySchema, 'query'), (req, res) => {
   // #swagger.summary = 'Daftar warung (filter + pagination) - publik'
   // #swagger.parameters['search'] = { in: 'query', type: 'string', description: 'Cari nama warung' }
   // #swagger.parameters['category'] = { in: 'query', type: 'string', description: 'Filter kategori' }
+  // #swagger.parameters['location'] = { in: 'query', type: 'string', description: 'Filter lokasi kantin, contoh: Kantin FEB' }
   // #swagger.parameters['page'] = { in: 'query', type: 'integer', description: 'Halaman (default 1)' }
   // #swagger.parameters['limit'] = { in: 'query', type: 'integer', description: 'Data per halaman (default 10, maks 100)' }
   // #swagger.responses[200] = { description: 'Daftar warung + meta pagination' }

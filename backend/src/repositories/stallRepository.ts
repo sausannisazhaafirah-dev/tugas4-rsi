@@ -5,6 +5,7 @@ import { stalls } from '../db/schema.ts';
 export interface FindAllParams {
   search?: string;
   category?: string;
+  location?: string;
   page: number;
   limit: number;
 }
@@ -24,6 +25,7 @@ export class StallRepository {
     const conditions: SQL[] = [];
     if (params.search) conditions.push(like(stalls.name, `%${params.search}%`));
     if (params.category) conditions.push(eq(stalls.category, params.category));
+        if (params.location) conditions.push(eq(stalls.location, params.location));
     const where = conditions.length > 0 ? and(...conditions) : undefined;
 
     const offset = (params.page - 1) * params.limit;

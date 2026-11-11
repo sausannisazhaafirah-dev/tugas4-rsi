@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+/* Palet KantinKu (toska laut) — cukup ganti di sini kalau mau ubah warna */
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-brand: #0E6E7A;
+  --color-brand-hover: #0A5963;
+  --color-brand-dark: #0A4F57;
+  --color-brand-soft: #E2F4F5;
+  --color-page: #F6FAFA;
+  --color-line: #D5E2E3;
+  --color-ink: #1F2A2C;
+  --color-muted: #5B6B6E;
+  --color-star: #D85A30;
+}
+
+body {
+  background: var(--color-page);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}

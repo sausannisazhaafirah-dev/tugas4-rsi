@@ -1,4 +1,5 @@
 import express, { type Application } from 'express';
+import cors from 'cors';
 import { sql } from 'drizzle-orm';
 import swaggerUi from 'swagger-ui-express';
 import swaggerDocument from './docs/swagger-output.json' with { type: 'json' };
@@ -17,6 +18,14 @@ import { errorHandler } from './middlewares/errorHandler.ts';
 const app: Application = express();
 const PORT: number = 3000;
 
+app.use(express.json());
+// Izinkan frontend (Vite, port 5173) memanggil API ini dari browser.
+app.use(
+  cors({
+    origin: 'http://localhost:5173',
+    allowedHeaders: ['Content-Type', 'Authorization'],
+  }),
+);
 app.use(express.json());
 
 // Dokumentasi API (Swagger UI).
